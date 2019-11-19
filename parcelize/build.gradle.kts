@@ -22,10 +22,6 @@ android {
     }
 }
 
-androidExtensions {
-    isExperimental = true
-}
-
 dependencies {
     mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
 }
