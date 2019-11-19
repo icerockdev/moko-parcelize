@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
-        outState?.putParcelable(userInstanceKey, user)
+        outState.putParcelable(userInstanceKey, user)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {

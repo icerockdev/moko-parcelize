@@ -18,7 +18,7 @@ object Versions {
 
     object Libs {
         object Android {
-            const val appCompat = "1.0.2"
+            const val appCompat = "1.1.0"
         }
 
         object MultiPlatform {
