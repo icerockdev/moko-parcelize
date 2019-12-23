@@ -46,6 +46,11 @@ dependencies {
 }
 ```
 
+Enable [kotlin android extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html):
+```groovy
+apply plugin: 'kotlin-android-extensions'
+```
+
 settings.gradle  
 ```groovy
 enableFeaturePreview("GRADLE_METADATA")
@@ -53,11 +58,6 @@ enableFeaturePreview("GRADLE_METADATA")
 
 ## Usage
 ### Parcelize
-Enable [kotlin android extensions](https://kotlinlang.org/docs/tutorials/android-plugin.html):
-```groovy
-apply plugin: 'kotlin-android-extensions'
-```
-
 Mark common code classes with the annotation `@Parcelize` like in the Android code for automatically generated `Parcelable` implementation.
 ```kotlin
 @Parcelize
