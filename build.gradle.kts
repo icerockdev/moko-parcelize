@@ -2,6 +2,17 @@
  * Copyright 2019 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
  */
 
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        plugin(Deps.Plugins.androidExtensions)
+    }
+}
+
 allprojects {
     repositories {
         mavenLocal()
@@ -14,8 +25,12 @@ allprojects {
         maven { url = uri("https://dl.bintray.com/icerockdev/moko") }
     }
 
-    // workaround for https://youtrack.jetbrains.com/issue/KT-27170
-    configurations.create("compileClasspath")
+    configurations.all {
+        resolutionStrategy.dependencySubstitution {
+            substitute(module(Deps.Libs.MultiPlatform.mokoParcelize.common))
+                .with(project(":parcelize"))
+        }
+    }
 }
 
 tasks.register("clean", Delete::class).configure {

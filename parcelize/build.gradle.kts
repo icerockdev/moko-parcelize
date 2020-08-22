@@ -3,27 +3,23 @@
  */
 
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.multiplatform")
-    id("kotlin-android-extensions")
-    id("dev.icerock.mobile.multiplatform")
-    id("maven-publish")
+    plugin(Deps.Plugins.androidLibrary)
+    plugin(Deps.Plugins.kotlinMultiPlatform)
+    plugin(Deps.Plugins.androidExtensions)
+    plugin(Deps.Plugins.mobileMultiPlatform)
+    plugin(Deps.Plugins.mavenPublish)
 }
 
 group = "dev.icerock.moko"
-version = Versions.Libs.MultiPlatform.mokoParcelize
+version = Deps.mokoParcelizeVersion
 
 android {
-    compileSdkVersion(Versions.Android.compileSdk)
+    compileSdkVersion(Deps.Android.compileSdk)
 
     defaultConfig {
-        minSdkVersion(Versions.Android.minSdk)
-        targetSdkVersion(Versions.Android.targetSdk)
+        minSdkVersion(Deps.Android.minSdk)
+        targetSdkVersion(Deps.Android.targetSdk)
     }
-}
-
-dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
 }
 
 publishing {
