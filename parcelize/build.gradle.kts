@@ -13,15 +13,6 @@ plugins {
 group = "dev.icerock.moko"
 version = Deps.mokoParcelizeVersion
 
-android {
-    compileSdkVersion(Deps.Android.compileSdk)
-
-    defaultConfig {
-        minSdkVersion(Deps.Android.minSdk)
-        targetSdkVersion(Deps.Android.targetSdk)
-    }
-}
-
 publishing {
     repositories.maven("https://api.bintray.com/maven/icerockdev/moko/moko-parcelize/;publish=1") {
         name = "bintray"
