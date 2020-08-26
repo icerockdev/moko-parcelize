@@ -46,7 +46,7 @@ android {
 }
 
 dependencies {
-    implementation(Deps.Libs.Android.appCompat.name)
+    implementation(Deps.Libs.Android.appCompat)
 
     implementation(project(":sample:mpp-library"))
 }

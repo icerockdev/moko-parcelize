@@ -30,15 +30,13 @@ object Deps {
 
     object Libs {
         object Android {
-            val appCompat = AndroidLibrary(
-                name = "androidx.appcompat:appcompat:$androidAppCompatVersion"
-            )
+            const val appCompat =
+                "androidx.appcompat:appcompat:$androidAppCompatVersion"
         }
 
         object MultiPlatform {
-            val mokoParcelize = MultiPlatformLibrary(
-                common = "dev.icerock.moko:parcelize:$mokoParcelizeVersion"
-            )
+            const val mokoParcelize =
+                "dev.icerock.moko:parcelize:$mokoParcelizeVersion"
         }
     }
 }

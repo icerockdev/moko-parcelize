@@ -27,8 +27,19 @@ allprojects {
 
     configurations.all {
         resolutionStrategy.dependencySubstitution {
-            substitute(module(Deps.Libs.MultiPlatform.mokoParcelize.common))
+            substitute(module(Deps.Libs.MultiPlatform.mokoParcelize))
                 .with(project(":parcelize"))
+        }
+    }
+
+    plugins.withId(Deps.Plugins.androidLibrary.id) {
+        configure<com.android.build.gradle.LibraryExtension> {
+            compileSdkVersion(Deps.Android.compileSdk)
+
+            defaultConfig {
+                minSdkVersion(Deps.Android.minSdk)
+                targetSdkVersion(Deps.Android.targetSdk)
+            }
         }
     }
 }

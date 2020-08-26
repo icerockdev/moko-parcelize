@@ -10,15 +10,6 @@ plugins {
     plugin(Deps.Plugins.iosFramework)
 }
 
-android {
-    compileSdkVersion(Deps.Android.compileSdk)
-
-    defaultConfig {
-        minSdkVersion(Deps.Android.minSdk)
-        targetSdkVersion(Deps.Android.targetSdk)
-    }
-}
-
 dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.mokoParcelize)
+    commonMainApi(Deps.Libs.MultiPlatform.mokoParcelize)
 }
