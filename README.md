@@ -71,8 +71,7 @@ Please see more examples in the [sample directory](sample).
 
 ## Set Up Locally 
 - The [parcelize directory](parcelize) contains the `parcelize` library;
-- The [sample directory](sample) contains sample apps for Android and iOS; plus the mpp-library connected to the apps;
-- For local testing use the `./publishToMavenLocal.sh` script - so that sample apps use the locally published version.
+- The [sample directory](sample) contains sample apps for Android and iOS; plus the mpp-library connected to the apps.
 
 ## Contributing
 All development (both new features and bug fixes) is performed in the `develop` branch. This way `master` always contains the sources of the most recently released version. Please send PRs with bug fixes to the `develop` branch. Documentation fixes in the markdown files are an exception to this rule. They are updated directly in `master`.
