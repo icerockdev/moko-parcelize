@@ -3,24 +3,13 @@
  */
 
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.multiplatform")
-    id("dev.icerock.mobile.multiplatform")
-    id("kotlin-android-extensions")
+    plugin(Deps.Plugins.androidLibrary)
+    plugin(Deps.Plugins.kotlinMultiPlatform)
+    plugin(Deps.Plugins.mobileMultiPlatform)
+    plugin(Deps.Plugins.androidExtensions)
+    plugin(Deps.Plugins.iosFramework)
 }
-
-android {
-    compileSdkVersion(Versions.Android.compileSdk)
-
-    defaultConfig {
-        minSdkVersion(Versions.Android.minSdk)
-        targetSdkVersion(Versions.Android.targetSdk)
-    }
-}
-
-setupFramework(exports = emptyList())
 
 dependencies {
-    mppLibrary(Deps.Libs.MultiPlatform.kotlinStdLib)
-    mppLibrary(Deps.Libs.MultiPlatform.mokoParcelize)
+    commonMainApi(Deps.Libs.MultiPlatform.mokoParcelize)
 }

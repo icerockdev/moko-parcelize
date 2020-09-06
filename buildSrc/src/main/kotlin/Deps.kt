@@ -3,35 +3,40 @@
  */
 
 object Deps {
+    private const val kotlinVersion = "1.4.0"
+    private const val androidAppCompatVersion = "1.1.0"
+    const val mokoParcelizeVersion = "0.4.0"
+
+    object Android {
+        const val compileSdk = 28
+        const val targetSdk = 28
+        const val minSdk = 16
+    }
+
     object Plugins {
-        const val androidExtensions =
-            "org.jetbrains.kotlin:kotlin-android-extensions:${Versions.Plugins.androidExtensions}"
+        val androidExtensions = GradlePlugin(
+            id = "kotlin-android-extensions",
+            module = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
+        )
+        val androidLibrary = GradlePlugin(id = "com.android.library")
+        val androidApplication = GradlePlugin(id = "com.android.application")
+        val kotlinMultiPlatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
+        val kotlinAndroid = GradlePlugin(id = "kotlin-android")
+        val kotlinKapt = GradlePlugin(id = "kotlin-kapt")
+        val mobileMultiPlatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
+        val iosFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.ios-framework")
+        val mavenPublish = GradlePlugin(id = "maven-publish")
     }
 
     object Libs {
         object Android {
-            val kotlinStdLib = AndroidLibrary(
-                name = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
-            )
-            val appCompat = AndroidLibrary(
-                name = "androidx.appcompat:appcompat:${Versions.Libs.Android.appCompat}"
-            )
+            const val appCompat =
+                "androidx.appcompat:appcompat:$androidAppCompatVersion"
         }
 
         object MultiPlatform {
-            val kotlinStdLib = MultiPlatformLibrary(
-                android = Android.kotlinStdLib.name,
-                common = "org.jetbrains.kotlin:kotlin-stdlib-common:${Versions.kotlin}"
-            )
-            val mokoParcelize = MultiPlatformLibrary(
-                common = "dev.icerock.moko:parcelize:${Versions.Libs.MultiPlatform.mokoParcelize}",
-                iosX64 = "dev.icerock.moko:parcelize-iosx64:${Versions.Libs.MultiPlatform.mokoParcelize}",
-                iosArm64 = "dev.icerock.moko:parcelize-iosarm64:${Versions.Libs.MultiPlatform.mokoParcelize}"
-            )
+            const val mokoParcelize =
+                "dev.icerock.moko:parcelize:$mokoParcelizeVersion"
         }
     }
-
-    val plugins: Map<String, String> = mapOf(
-        "kotlin-android-extensions" to Plugins.androidExtensions
-    )
 }
