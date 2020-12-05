@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zIh-nI-gcX">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zIh-nI-gcX">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +11,7 @@
             <objects>
                 <navigationController id="zIh-nI-gcX" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aGe-Yj-KQZ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -28,7 +25,7 @@
         <!--Test-->
         <scene sceneID="B5V-K5-FDE">
             <objects>
-                <viewController id="TTy-86-aNs" customClass="TestViewController" customModule="mokoSampleCore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TTy-86-aNs" customClass="TestViewController" customModule="mokoSampleParcelize" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gcA-zH-akF"/>
                         <viewControllerLayoutGuide type="bottom" id="gTY-6T-yQv"/>
@@ -36,9 +33,24 @@
                     <view key="view" contentMode="scaleToFill" id="KxK-oh-5KO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi6-LE-MiS">
+                                <rect key="frame" x="139" y="273.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xi6-LE-MiS" firstAttribute="centerY" secondItem="KxK-oh-5KO" secondAttribute="centerY" id="efV-gk-Ydz"/>
+                            <constraint firstItem="Xi6-LE-MiS" firstAttribute="centerX" secondItem="KxK-oh-5KO" secondAttribute="centerX" id="mQU-1J-xdv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Test" id="0jM-60-fjM"/>
+                    <connections>
+                        <outlet property="label" destination="Xi6-LE-MiS" id="FJj-iN-xwx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxh-nl-GiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
