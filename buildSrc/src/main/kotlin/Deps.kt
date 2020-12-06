@@ -5,7 +5,7 @@
 object Deps {
     private const val kotlinVersion = "1.4.20"
     private const val androidAppCompatVersion = "1.1.0"
-    const val mokoParcelizeVersion = "0.4.0"
+    const val mokoParcelizeVersion = "0.5.0"
 
     object Android {
         const val compileSdk = 28
