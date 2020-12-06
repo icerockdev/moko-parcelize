@@ -24,7 +24,7 @@ object Deps {
         val kotlinAndroid = GradlePlugin(id = "kotlin-android")
         val kotlinKapt = GradlePlugin(id = "kotlin-kapt")
         val mobileMultiPlatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
-        val iosFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.ios-framework")
+        val appleFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.apple-framework")
         val mavenPublish = GradlePlugin(id = "maven-publish")
     }
 

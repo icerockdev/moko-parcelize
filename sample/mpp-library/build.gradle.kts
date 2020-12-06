@@ -7,7 +7,11 @@ plugins {
     plugin(Deps.Plugins.kotlinMultiPlatform)
     plugin(Deps.Plugins.mobileMultiPlatform)
     plugin(Deps.Plugins.androidExtensions)
-    plugin(Deps.Plugins.iosFramework)
+    plugin(Deps.Plugins.appleFramework)
+}
+
+kotlin {
+    macosX64()
 }
 
 dependencies {

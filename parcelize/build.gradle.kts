@@ -13,6 +13,10 @@ plugins {
 group = "dev.icerock.moko"
 version = Deps.mokoParcelizeVersion
 
+kotlin {
+    macosX64()
+}
+
 publishing {
     repositories.maven("https://api.bintray.com/maven/icerockdev/moko/moko-parcelize/;publish=1") {
         name = "bintray"

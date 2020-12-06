@@ -1,5 +1,5 @@
 ![moko-parcelize](img/logo.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://api.bintray.com/packages/icerockdev/moko/moko-parcelize/images/download.svg) ](https://bintray.com/icerockdev/moko/moko-parcelize/_latestVersion) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.0-orange)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://api.bintray.com/packages/icerockdev/moko/moko-parcelize/images/download.svg) ](https://bintray.com/icerockdev/moko/moko-parcelize/_latestVersion) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.20-orange)
 
 # Mobile Kotlin parcelize
 This is a Kotlin Multiplatform library that supports Parcelize in common code.  
@@ -32,6 +32,8 @@ This is a Kotlin Multiplatform library that supports Parcelize in common code.
   - 0.3.0
 - kotlin 1.4.0
   - 0.4.0
+- kotlin 1.4.20
+  - 0.5.0
 
 ## Installation
 root build.gradle  
@@ -46,7 +48,7 @@ allprojects {
 project build.gradle
 ```groovy
 dependencies {
-    commonMainApi("dev.icerock.moko:parcelize:0.4.0")
+    commonMainApi("dev.icerock.moko:parcelize:0.5.0")
 }
 ```
 
@@ -71,8 +73,7 @@ Please see more examples in the [sample directory](sample).
 
 ## Set Up Locally 
 - The [parcelize directory](parcelize) contains the `parcelize` library;
-- The [sample directory](sample) contains sample apps for Android and iOS; plus the mpp-library connected to the apps;
-- For local testing use the `./publishToMavenLocal.sh` script - so that sample apps use the locally published version.
+- The [sample directory](sample) contains sample apps for Android and iOS; plus the mpp-library connected to the apps.
 
 ## Contributing
 All development (both new features and bug fixes) is performed in the `develop` branch. This way `master` always contains the sources of the most recently released version. Please send PRs with bug fixes to the `develop` branch. Documentation fixes in the markdown files are an exception to this rule. They are updated directly in `master`.
