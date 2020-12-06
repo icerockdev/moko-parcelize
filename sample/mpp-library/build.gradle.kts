@@ -7,42 +7,11 @@ plugins {
     plugin(Deps.Plugins.kotlinMultiPlatform)
     plugin(Deps.Plugins.mobileMultiPlatform)
     plugin(Deps.Plugins.androidExtensions)
-    plugin(Deps.Plugins.iosFramework)
+    plugin(Deps.Plugins.appleFramework)
 }
 
 kotlin {
-    macosX64 {
-        binaries {
-            framework("MultiPlatformLibrary")
-        }
-    }
-}
-
-// temporary solution, until we fix https://github.com/icerockdev/mobile-multiplatform-gradle-plugin/issues/26
-val cocoapodsPath = "${buildDir.absolutePath}/cocoapods/framework"
-kotlin.targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>().matching {
-    it.konanTarget == org.jetbrains.kotlin.konan.target.KonanTarget.MACOS_X64
-}.all {
-    binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>().all {
-        val syncTaskName = this.linkTaskName.replaceFirst("link", "copy")
-        val frameworkPath = this.outputDirectory
-
-        project.tasks.create(syncTaskName) {
-            group = "cocoapods"
-
-            doFirst {
-                exec { commandLine("rm", "-rf", cocoapodsPath) }
-                exec { commandLine("cp", "-R", frameworkPath, cocoapodsPath) }
-            }
-
-            dependsOn(linkTask)
-        }
-    }
-}
-tasks.matching { it.name.startsWith("sync") }.all {
-    doFirst {
-        exec { commandLine("rm", "-rf", cocoapodsPath) }
-    }
+    macosX64()
 }
 
 dependencies {

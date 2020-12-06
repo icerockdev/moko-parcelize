@@ -20,8 +20,8 @@ Pod::Spec.new do |spec|
         'GRADLE_TASK[sdk=iphonesimulator*][config=*elease]' => 'syncMultiPlatformLibraryReleaseFrameworkIosX64',
         'GRADLE_TASK[sdk=iphoneos*][config=*ebug]' => 'syncMultiPlatformLibraryDebugFrameworkIosArm64',
         'GRADLE_TASK[sdk=iphoneos*][config=*elease]' => 'syncMultiPlatformLibraryReleaseFrameworkIosArm64',
-        'GRADLE_TASK[sdk=macosx*][config=*ebug]' => 'copyMultiPlatformLibraryDebugFrameworkMacosX64',
-        'GRADLE_TASK[sdk=macosx*][config=*elease]' => 'copyMultiPlatformLibraryReleaseFrameworkMacosX64'
+        'GRADLE_TASK[sdk=macosx*][config=*ebug]' => 'syncMultiPlatformLibraryDebugFrameworkMacosX64',
+        'GRADLE_TASK[sdk=macosx*][config=*elease]' => 'syncMultiPlatformLibraryReleaseFrameworkMacosX64'
     }
 
     spec.script_phases = [
