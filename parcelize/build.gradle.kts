@@ -5,7 +5,7 @@
 plugins {
     plugin(Deps.Plugins.androidLibrary)
     plugin(Deps.Plugins.kotlinMultiPlatform)
-    plugin(Deps.Plugins.androidExtensions)
+    plugin(Deps.Plugins.kotlinParcelize)
     plugin(Deps.Plugins.mobileMultiPlatform)
     plugin(Deps.Plugins.mavenPublish)
 }
