@@ -5,7 +5,7 @@
 plugins {
     plugin(Deps.Plugins.androidLibrary)
     plugin(Deps.Plugins.kotlinMultiPlatform)
-    plugin(Deps.Plugins.androidExtensions)
+    plugin(Deps.Plugins.kotlinParcelize)
     plugin(Deps.Plugins.mobileMultiPlatform)
     plugin(Deps.Plugins.mavenPublish)
 }
@@ -43,7 +43,7 @@ kotlin {
     }
 }
 
-fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux(){
+fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux() {
     linuxArm64()
     linuxArm32Hfp()
     linuxMips32()
@@ -51,7 +51,7 @@ fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux(){
     linuxX64()
 }
 
-fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.windows(){
+fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.windows() {
     mingwX64()
     mingwX86()
 }
