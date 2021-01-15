@@ -15,6 +15,45 @@ version = Deps.mokoParcelizeVersion
 
 kotlin {
     macosX64()
+    tvos()
+    watchos()
+    jvm()
+    js()
+    linux()
+    windows()
+    wasm32()
+
+    sourceSets {
+        val commonMain by getting
+        val androidMain by getting
+
+        val notAndroidMain by creating {
+            dependsOn(commonMain)
+        }
+        all {
+            val independentSourceSets = listOf(commonMain, androidMain, notAndroidMain)
+            if (this !in independentSourceSets) {
+                dependsOn(notAndroidMain)
+            }
+
+            languageSettings.apply {
+                useExperimentalAnnotation("kotlin.RequiresOptIn")
+            }
+        }
+    }
+}
+
+fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux(){
+    linuxArm64()
+    linuxArm32Hfp()
+    linuxMips32()
+    linuxMipsel32()
+    linuxX64()
+}
+
+fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.windows(){
+    mingwX64()
+    mingwX86()
 }
 
 publishing {
