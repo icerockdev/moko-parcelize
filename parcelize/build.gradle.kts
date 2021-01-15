@@ -38,46 +38,11 @@ kotlin {
         val notAndroidMain by creating {
             dependsOn(commonMain)
         }
-        val macOSMain by getting {
-            dependsOn(notAndroidMain)
-        }
-        val tvosMain by getting {
-            dependsOn(notAndroidMain)
-        }
-        val watchosMain by getting {
-            dependsOn(notAndroidMain)
-        }
-        val jvmMain by getting {
-            dependsOn(notAndroidMain)
-        }
-        val jsMain by getting {
-            dependsOn(notAndroidMain)
-        }
-        val iosMain by getting {
-            dependsOn(notAndroidMain)
-        }
-        val linuxArm64Main by getting {
-            dependsOn(notAndroidMain)
-        }
-        val linuxArm32HfpMain by getting {
-            dependsOn(notAndroidMain)
-        }
-        val linuxMips32Main by getting {
-            dependsOn(notAndroidMain)
-        }
-        val linuxMipsel32Main by getting {
-            dependsOn(notAndroidMain)
-        }
-        val linuxX64Main by getting {
-            dependsOn(notAndroidMain)
-        }
-        val mingwX64Main by getting {
-            dependsOn(notAndroidMain)
-        }
-        val mingwX86Main by getting {
-            dependsOn(notAndroidMain)
-        }
-        val wasm32Main by getting {
+
+        val intermediateSourceSets = listOf(commonMain, notAndroidMain)
+        matching { sourceSet ->
+            !sourceSet.name.startsWith("android") && sourceSet !in intermediateSourceSets
+        }.all {
             dependsOn(notAndroidMain)
         }
     }
