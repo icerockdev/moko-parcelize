@@ -3,9 +3,9 @@
  */
 
 object Deps {
-    private const val kotlinVersion = "1.4.20"
+    private const val kotlinVersion = "1.4.21"
     private const val androidAppCompatVersion = "1.1.0"
-    const val mokoParcelizeVersion = "0.5.0"
+    const val mokoParcelizeVersion = "0.6.0"
 
     object Android {
         const val compileSdk = 28
@@ -14,14 +14,11 @@ object Deps {
     }
 
     object Plugins {
-        val androidExtensions = GradlePlugin(
-            id = "kotlin-android-extensions",
-            module = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
-        )
         val androidLibrary = GradlePlugin(id = "com.android.library")
         val androidApplication = GradlePlugin(id = "com.android.application")
         val kotlinMultiPlatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
         val kotlinAndroid = GradlePlugin(id = "kotlin-android")
+        val kotlinParcelize = GradlePlugin(id = "kotlin-parcelize")
         val kotlinKapt = GradlePlugin(id = "kotlin-kapt")
         val mobileMultiPlatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
         val appleFramework = GradlePlugin(id = "dev.icerock.mobile.multiplatform.apple-framework")

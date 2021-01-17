@@ -2,20 +2,8 @@
  * Copyright 2019 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
  */
 
-buildscript {
-    repositories {
-        jcenter()
-        google()
-    }
-
-    dependencies {
-        plugin(Deps.Plugins.androidExtensions)
-    }
-}
-
 allprojects {
     repositories {
-        mavenLocal()
 
         google()
         jcenter()
@@ -35,8 +23,4 @@ allprojects {
             }
         }
     }
-}
-
-tasks.register("clean", Delete::class).configure {
-    delete(rootProject.buildDir)
 }
