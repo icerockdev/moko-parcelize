@@ -46,22 +46,6 @@ kotlin {
             dependsOn(notAndroidMain)
         }
     }
-
-    // Make sure to avoid duplicate publications
-    publishing {
-        val publicationsFromMainHost = listOf(
-            "wasm32", "jvm", "js", "kotlinMultiplatform", "androidRelease", "androidDebug", "linuxArm64", "linuxArm32Hfp", "linuxX64"
-        )
-
-        publications {
-            matching { it.name in publicationsFromMainHost }.all {
-                val targetPublication = this@all
-                tasks.withType<AbstractPublishToMaven>()
-                    .matching { it.publication == targetPublication }
-                    .configureEach { onlyIf { System.getProperty("IS_MAIN_HOST") == "true" } }
-            }
-        }
-    }
 }
 
 fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux() {
@@ -86,4 +70,26 @@ publishing {
             password = System.getProperty("BINTRAY_KEY")
         }
     }
+
+    // Make sure to avoid duplicate publications
+    val publicationsFromMainHost = listOf(
+        "wasm32",
+        "jvm",
+        "js",
+        "kotlinMultiplatform",
+        "androidRelease",
+        "androidDebug",
+        "linuxArm64",
+        "linuxArm32Hfp",
+        "linuxX64"
+    )
+
+    publications
+        .matching { it.name in publicationsFromMainHost }
+        .all {
+            val targetPublication = this@all
+            tasks.withType<AbstractPublishToMaven>()
+                .matching { it.publication == targetPublication }
+                .all { onlyIf { System.getProperty("IS_MAIN_HOST") == "true" } }
+        }
 }
