@@ -49,11 +49,12 @@ kotlin {
 
     // Make sure to avoid duplicate publications
     publishing {
-        val publicationsFromMainHost =
-            listOf(android(), wasm32(), jvm(), js()).map { it.name } + "kotlinMultiplatform"
+        val publicationsFromMainHost = listOf(
+            "wasm32", "jvm", "js", "kotlinMultiplatform", "androidRelease", "androidDebug", "linuxArm64", "linuxArm32Hfp", "linuxX64"
+        )
 
         publications {
-            matching { it.name in publicationsFromMainHost }.all{
+            matching { it.name in publicationsFromMainHost }.all {
                 val targetPublication = this@all
                 tasks.withType<AbstractPublishToMaven>()
                     .matching { it.publication == targetPublication }
