@@ -46,6 +46,21 @@ kotlin {
             dependsOn(notAndroidMain)
         }
     }
+
+    // Make sure to avoid duplicate publications
+    publishing {
+        val publicationsFromMainHost =
+            listOf(android(), wasm32(), jvm(), js()).map { it.name } + "kotlinMultiplatform"
+
+        publications {
+            matching { it.name in publicationsFromMainHost }.all{
+                val targetPublication = this@all
+                tasks.withType<AbstractPublishToMaven>()
+                    .matching { it.publication == targetPublication }
+                    .configureEach { onlyIf { System.getProperty("IS_MAIN_HOST") == "true" } }
+            }
+        }
+    }
 }
 
 fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.linux() {
