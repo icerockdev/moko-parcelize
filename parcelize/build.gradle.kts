@@ -66,7 +66,7 @@ fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.windows() {
 }
 
 val javadocJar by tasks.registering(Jar::class) {
-   archiveClassifier.set("javadoc")
+    archiveClassifier.set("javadoc")
 }
 
 publishing {
@@ -143,7 +143,9 @@ publishing {
         val signingKey: String? = System.getenv("SIGNING_KEY")?.let { base64Key ->
             String(Base64.getDecoder().decode(base64Key))
         }
-        useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
-        sign(publishing.publications)
+        if (signingKeyId != null) {
+            useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+            sign(publishing.publications)
+        }
     }
 }
