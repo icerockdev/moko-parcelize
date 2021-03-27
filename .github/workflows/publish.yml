@@ -12,6 +12,12 @@ jobs:
   publish:
     name: Publish library at mavenCentral
     runs-on: ${{ matrix.os }}
+    env:
+      OSSRH_USER: ${{ secrets.OSSRH_USER }}
+      OSSRH_KEY: ${{ secrets.OSSRH_KEY }}
+      SIGNING_KEY_ID: ${{ secrets.SIGNING_KEYID }}
+      SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
+      SIGNING_KEY: ${{ secrets.GPG_KEY_CONTENTS }}
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
