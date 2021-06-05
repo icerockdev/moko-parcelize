@@ -3,17 +3,22 @@
  */
 
 plugins {
-    plugin(Deps.Plugins.androidLibrary)
-    plugin(Deps.Plugins.kotlinMultiPlatform)
-    plugin(Deps.Plugins.mobileMultiPlatform)
-    plugin(Deps.Plugins.kotlinParcelize)
-    plugin(Deps.Plugins.appleFramework)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.multiplatform")
+    id("dev.icerock.mobile.multiplatform")
+    id("kotlin-parcelize")
+    id("dev.icerock.mobile.multiplatform.apple-framework")
 }
 
 kotlin {
     macosX64()
+    targets.withType(org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget::class.java).all {
+        binaries.withType(org.jetbrains.kotlin.gradle.plugin.mpp.Framework::class.java).all {
+            export(projects.parcelize)
+        }
+    }
 }
 
 dependencies {
-    commonMainApi(Deps.Libs.MultiPlatform.mokoParcelize)
+    "commonMainApi"(projects.parcelize)
 }

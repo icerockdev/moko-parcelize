@@ -5,7 +5,7 @@
 subprojects {
     configurations.all {
         resolutionStrategy.dependencySubstitution {
-            substitute(module(Deps.Libs.MultiPlatform.mokoParcelize))
+            substitute(module(libs.mokoParcelize.get.module))
                 .with(project(":parcelize"))
         }
     }
