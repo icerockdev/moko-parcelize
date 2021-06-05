@@ -1,0 +1,11 @@
+[versions]
+kotlinVersion = "1.4.31"
+androidAppCompatVersion = "1.1.0"
+mokoParcelizeVersion = "0.7.0"
+compileSdk = "28"
+targetSdk = "28"
+minSdk = "16"
+
+[libraries]
+appCompat = { module = "androidx.appcompat:appcompat", version.ref = "androidAppCompatVersion" }
+mokoGraphics = { module = "dev.icerock.moko:parcelize", version.ref = "mokoParcelizeVersion" }
