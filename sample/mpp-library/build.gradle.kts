@@ -3,11 +3,11 @@
  */
 
 plugins {
-    plugin(Deps.Plugins.androidLibrary)
-    plugin(Deps.Plugins.kotlinMultiPlatform)
-    plugin(Deps.Plugins.mobileMultiPlatform)
-    plugin(Deps.Plugins.kotlinParcelize)
-    plugin(Deps.Plugins.appleFramework)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.multiplatform")
+    id("dev.icerock.mobile.multiplatform")
+    id("kotlin-parcelize")
+    id("dev.icerock.mobile.multiplatform.apple-framework")
 }
 
 kotlin {
@@ -15,5 +15,5 @@ kotlin {
 }
 
 dependencies {
-    commonMainApi(Deps.Libs.MultiPlatform.mokoParcelize)
+    commonMainApi(projects.parcelize)
 }

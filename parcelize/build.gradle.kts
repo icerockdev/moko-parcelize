@@ -6,16 +6,17 @@ import java.util.Base64
 import kotlin.text.String
 
 plugins {
-    plugin(Deps.Plugins.androidLibrary)
-    plugin(Deps.Plugins.kotlinMultiPlatform)
-    plugin(Deps.Plugins.kotlinParcelize)
-    plugin(Deps.Plugins.mobileMultiPlatform)
-    plugin(Deps.Plugins.mavenPublish)
-    plugin(Deps.Plugins.signing)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.multiplatform")
+    id("kotlin-parcelize")
+    id("dev.icerock.mobile.multiplatform")
+    id("maven-publish")
+    id("signing")
 }
 
 group = "dev.icerock.moko"
-version = Deps.mokoParcelizeVersion
+version = libs.versions.mokoParcelizeVersion.get()
+
 
 kotlin {
     macosX64("macOS")
