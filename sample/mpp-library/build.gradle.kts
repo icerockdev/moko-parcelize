@@ -21,5 +21,5 @@ kotlin {
 }
 
 dependencies {
-    "commonMainApi"(projects.parcelize)
+    commonMainApi(projects.parcelize)
 }
