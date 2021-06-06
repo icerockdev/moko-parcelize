@@ -6,7 +6,6 @@ import java.util.Base64
 import kotlin.text.String
 
 plugins {
-
     id("com.android.library")
     id("org.jetbrains.kotlin.multiplatform")
     id("kotlin-parcelize")
@@ -24,7 +23,7 @@ kotlin {
     tvos()
     watchos()
     jvm()
-    js {
+    js(BOTH) {
         nodejs()
         browser()
     }

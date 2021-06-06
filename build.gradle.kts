@@ -1,21 +1,11 @@
 /*
  * Copyright 2019 IceRock MAG Inc. Use of this source code is governed by the Apache 2.0 license.
  */
-plugins{
-    //id("kotlin-android") apply false
-}
 
 buildscript {
     repositories {
         mavenCentral()
         google()
-
-        jcenter {
-            content {
-                includeGroup("org.jetbrains.trove4j")
-            }
-        }
-
     }
     dependencies {
         classpath("dev.icerock:mobile-multiplatform:0.9.2")
@@ -28,12 +18,6 @@ allprojects {
     repositories {
         mavenCentral()
         google()
-
-        jcenter {
-            content {
-                includeGroup("org.jetbrains.trove4j")
-            }
-        }
     }
 
     plugins.withId("com.android.library") {
