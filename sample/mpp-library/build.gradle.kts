@@ -14,6 +14,7 @@ plugins {
 
 kotlin {
     ios()
+    macosX64()
     android()
 }
 
