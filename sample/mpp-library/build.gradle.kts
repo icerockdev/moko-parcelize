@@ -13,7 +13,8 @@ plugins {
 }
 
 kotlin {
-    macosX64()
+    ios()
+    android()
 }
 
 dependencies {
