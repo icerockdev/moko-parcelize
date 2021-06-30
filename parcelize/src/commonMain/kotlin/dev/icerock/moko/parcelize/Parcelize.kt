@@ -4,12 +4,8 @@
 
 package dev.icerock.moko.parcelize
 
-@OptIn(ExperimentalMultiplatform::class)
-@OptionalExpectation
 expect annotation class Parcelize()
 
 expect interface Parcelable
 
-@OptIn(ExperimentalMultiplatform::class)
-@OptionalExpectation
 expect annotation class IgnoredOnParcel()
