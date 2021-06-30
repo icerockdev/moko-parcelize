@@ -5,6 +5,21 @@
 enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        google()
+
+        jcenter {
+            content {
+                includeGroup("org.jetbrains.kotlinx")
+            }
+        }
+    }
+}
+
+includeBuild("parcelize-build-logic")
+
 include(":parcelize")
 include(":sample:android-app")
 include(":sample:mpp-library")

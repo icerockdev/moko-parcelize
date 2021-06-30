@@ -1,10 +1,6 @@
 [versions]
-androidAppCompatVersion = "1.1.0"
-mokoParcelizeVersion = "0.7.0"
-compileSdk = "28"
-targetSdk = "28"
-minSdk = "16"
+androidAppCompatVersion = "1.2.0"
+mokoParcelizeVersion = "0.7.1"
 
 [libraries]
 appCompat = { module = "androidx.appcompat:appcompat", version.ref = "androidAppCompatVersion" }
-mokoParcelize = { module = "dev.icerock.moko:parcelize", version.ref = "mokoParcelizeVersion" }

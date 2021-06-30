@@ -37,7 +37,7 @@ allprojects {
 project build.gradle
 ```groovy
 dependencies {
-    commonMainApi("dev.icerock.moko:parcelize:0.7.0")
+    commonMainApi("dev.icerock.moko:parcelize:0.7.1")
 }
 ```
 
@@ -63,6 +63,7 @@ Please see more examples in the [sample directory](sample).
 ## Set Up Locally 
 - The [parcelize directory](parcelize) contains the `parcelize` library;
 - The [sample directory](sample) contains sample apps for Android and iOS; plus the mpp-library connected to the apps.
+- For publish to MavenLocal repository run `./gradlew publishToMavenLocal -DIS_MAIN_HOST=true`
 
 ## Contributing
 All development (both new features and bug fixes) is performed in the `develop` branch. This way `master` always contains the sources of the most recently released version. Please send PRs with bug fixes to the `develop` branch. Documentation fixes in the markdown files are an exception to this rule. They are updated directly in `master`.
