@@ -1,5 +1,5 @@
 ![moko-parcelize](img/logo.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/parcelize) ](https://repo1.maven.org/maven2/dev/icerock/moko/parcelize) ![kotlin-version](https://img.shields.io/badge/kotlin-1.5.10-orange)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/parcelize) ](https://repo1.maven.org/maven2/dev/icerock/moko/parcelize) ![kotlin-version](https://kotlin-version.aws.icerock.dev/kotlin-version?group=dev.icerock.moko&name=parcelize)
 
 # MOKO Parcelize
 This is a Kotlin Multiplatform library that supports Parcelize in common code.  
@@ -7,7 +7,6 @@ This is a Kotlin Multiplatform library that supports Parcelize in common code.
 ## Table of Contents
 - [Features](#features)
 - [Requirements](#requirements)
-- [Versions](#versions)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Samples](#samples)
@@ -20,9 +19,9 @@ This is a Kotlin Multiplatform library that supports Parcelize in common code.
 - All Kotlin Multiplatform targets support.
 
 ## Requirements
-- Gradle version 6.0+
+- Gradle version 6.8+
 - Android API 16+
-- iOS version 9.0+
+- iOS version 11.0+
 
 ## Installation
 root build.gradle  
