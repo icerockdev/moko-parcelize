@@ -5,3 +5,5 @@
 package dev.icerock.moko.parcelize
 
 actual interface Parcelable
+actual annotation class IgnoredOnParcel
+actual annotation class Parcelize

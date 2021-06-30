@@ -13,4 +13,4 @@ data class User(
     val lastName: String,
     val phone: String,
     val age: Int
-): Parcelable
+) : Parcelable

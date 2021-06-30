@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
         outState.putParcelable(userInstanceKey, user)
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
-        savedInstanceState?.getParcelable<User>(userInstanceKey)?.let {
+        savedInstanceState.getParcelable<User>(userInstanceKey)?.let {
             this.user = it
         }
     }
