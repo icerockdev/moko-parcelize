@@ -14,7 +14,9 @@ plugins {
 
 kotlin {
     ios()
+    iosSimulatorArm64()
     macosX64()
+    macosArm64()
     android()
 }
 
