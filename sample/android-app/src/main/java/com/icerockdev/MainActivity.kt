@@ -5,8 +5,10 @@
 package com.icerockdev
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.icerockdev.library.User
+import kotlinx.datetime.LocalDateTime
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         firstName = "Aleksey",
         lastName = "Mikhailov",
         phone = "+79000000000",
-        age = 26
+        age = 26,
+        birthday = LocalDateTime(1970, 1, 1, 0, 0, 0, 0)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-
         outState.putParcelable(userInstanceKey, user)
     }
 
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
 
         savedInstanceState.getParcelable<User>(userInstanceKey)?.let {
+            Log.d("MainActivity", "Read user: $it")
             this.user = it
         }
     }

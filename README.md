@@ -36,7 +36,7 @@ allprojects {
 project build.gradle
 ```groovy
 dependencies {
-    commonMainApi("dev.icerock.moko:parcelize:0.8.0")
+    commonMainApi("dev.icerock.moko:parcelize:0.9.0")
 }
 ```
 
