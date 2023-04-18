@@ -11,14 +11,7 @@ class TestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let user = User(
-            firstName: "Aleksey",
-            lastName: "Mikhailov",
-            phone: "+79000000000",
-            age: 26
-        )
         
-        label.text = "Hello, \(user.firstName)!"
+        label.text = "Hello, \(TestUsers.shared.user.firstName)!"
     }
 }

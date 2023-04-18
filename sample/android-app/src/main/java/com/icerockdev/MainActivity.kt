@@ -7,19 +7,14 @@ package com.icerockdev
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.icerockdev.library.TestUsers
 import com.icerockdev.library.User
 import kotlinx.datetime.LocalDateTime
 
 class MainActivity : AppCompatActivity() {
 
     private val userInstanceKey = "user"
-    private var user: User = User(
-        firstName = "Aleksey",
-        lastName = "Mikhailov",
-        phone = "+79000000000",
-        age = 26,
-        birthday = LocalDateTime(1970, 1, 1, 0, 0, 0, 0)
-    )
+    private var user: User = TestUsers.user
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
