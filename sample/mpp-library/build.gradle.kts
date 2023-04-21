@@ -22,4 +22,5 @@ kotlin {
 
 dependencies {
     commonMainApi(projects.parcelize)
+    commonMainApi("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 }
