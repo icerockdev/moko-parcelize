@@ -31,11 +31,6 @@ kotlin {
     wasm32()
 
     sourceSets {
-        all {
-            languageSettings.apply {
-                useExperimentalAnnotation("kotlin.RequiresOptIn")
-            }
-        }
 
         val commonMain by getting
 
